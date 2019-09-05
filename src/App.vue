@@ -2,8 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/cats">Cats</router-link> |
-      <router-link to="/dogs">Dogs</router-link> |
+      <router-link to="/banknotes">Banknotes </router-link> |
+      <router-link to="/coins">Coins</router-link> |
     </div>
     <b-container>
       <router-view/>

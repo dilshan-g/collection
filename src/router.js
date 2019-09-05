@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Cats from './views/Cats.vue'
-import Dogs from './views/Dogs.vue'
-import Pet from './views/Pet.vue'
+import Banknotes from './views/Banknotes.vue'
+import Coins from './views/Coins.vue'
+import Item from './views/Item.vue'
 
 Vue.use(Router)
 
@@ -17,19 +17,19 @@ export default new Router({
       component: Home
     },
     {
-      path: '/cats',
-      name: 'cats',
-      component: Cats
+      path: '/banknotes',
+      name: 'banknotes',
+      component: Banknotes
     },
     {
-      path: '/dogs',
-      name: 'dogs',
-      component: Dogs
+      path: '/coins',
+      name: 'coins',
+      component: Coins
     },
     {
-      path: '/pets/:species/:id',
-      name: 'pet',
-      component: Pet
+      path: '/items/:type/:id',
+      name: 'item',
+      component: Item
     }
   ]
 })

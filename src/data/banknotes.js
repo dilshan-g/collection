@@ -1,46 +1,50 @@
 export default [
   {
-    item_name: 'Ceylon 5 Rupees',
+    itemName: 'Ceylon 5 Rupees',
     grade: 'VF',
-    issued_country: 'Sri Lanka',
-    issued_date: '1954-01-01',
-    purchased_price: 200,
-    purchased_date: '2019-01-01',
-    issued_bank: 'Central Bank of Ceylon',
+    issuedCountry: 'Sri Lanka',
+    issuedDate: '1954-01-01',
+    purchasedPrice: 200,
+    purchasedDate: '2019-01-01',
+    issuedBank: 'Central Bank of Ceylon',
     series: 'Queen Elizabeth II',
-    item_serial: 'XXXXXX'
+    itemSerial: 'XXXXXX',
+    type: 'banknotes'
   },
   {
-    item_name: 'Ceylon 10 Rupees',
+    itemName: 'Ceylon 10 Rupees',
     grade: 'VF',
-    issued_country: 'Sri Lanka',
-    issued_date: '1954-01-01',
-    purchased_price: 250,
-    purchased_date: '2019-01-01',
-    issued_bank: 'Central Bank of Ceylon',
+    issuedCountry: 'Sri Lanka',
+    issuedDate: '1954-01-01',
+    purchasedPrice: 200,
+    purchasedDate: '2019-01-01',
+    issuedBank: 'Central Bank of Ceylon',
     series: 'Queen Elizabeth II',
-    item_serial: 'XXXXXX'
+    itemSerial: 'XXXXXX',
+    type: 'banknotes'
   },
   {
-    item_name: 'Ceylon 100 Rupees',
+    itemName: 'Ceylon 1 Rupee',
     grade: 'VF',
-    issued_country: 'Sri Lanka',
-    issued_date: '1952-01-01',
-    purchased_price: 200,
-    purchased_date: '2019-01-01',
-    issued_bank: 'Central Bank of Ceylon',
+    issuedCountry: 'Sri Lanka',
+    issuedDate: '1954-01-01',
+    purchasedPrice: 200,
+    purchasedDate: '2019-01-01',
+    issuedBank: 'Central Bank of Ceylon',
     series: 'Queen Elizabeth II',
-    item_serial: 'XXXXXX'
+    itemSerial: 'XXXXXX',
+    type: 'banknotes'
   },
   {
-    item_name: 'Ceylon 1 Rupee',
+    itemName: 'Ceylon 100 Rupees',
     grade: 'VF',
-    issued_country: 'Sri Lanka',
-    issued_date: '1954-01-01',
-    purchased_price: 80,
-    purchased_date: '2019-01-01',
-    issued_bank: 'Central Bank of Ceylon',
+    issuedCountry: 'Sri Lanka',
+    issuedDate: '1954-01-01',
+    purchasedPrice: 200,
+    purchasedDate: '2019-01-01',
+    issuedBank: 'Central Bank of Ceylon',
     series: 'Queen Elizabeth II',
-    item_serial: 'XXXXXX'
+    itemSerial: 'XXXXXX',
+    type: 'banknotes'
   }
 ]

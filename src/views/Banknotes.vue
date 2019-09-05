@@ -1,26 +1,26 @@
 <template>
   <div>
-    <PetTable
-      species="cats"
-      :pets="cats"
+    <ItemTable
+      category="banknotes"
+      :items="banknotes"
     />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import PetTable from '@/components/PetTable.vue'
+import ItemTable from '@/components/ItemTable.vue'
 
 export default {
   components: {
-    PetTable
+    ItemTable
   },
   data() {
     return {}
   },
   computed: {
     ...mapState([
-      'cats'
+      'banknotes'
     ])
   }
 }

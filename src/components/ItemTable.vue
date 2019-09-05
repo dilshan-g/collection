@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1>{{ species }} for Adoption</h1>
-    <b-table striped hover :items="pets" :fields="fields">
-      <template slot="name" slot-scope="data">
-        <router-link :to="`/pets/${species}/${data.index}`">
-          {{ data.index }}
+    <h1>{{ category }}s in your collection</h1>
+    <b-table striped hover :items="items" :fields="fields">
+      <template slot="itemName" slot-scope="data">
+        <router-link :to="`/items/${category}/${data.index}`">
+          {{ data.item.itemName }}
         </router-link>
       </template>
     </b-table>
@@ -16,27 +16,27 @@ export default {
   data () {
     return {
       fields: {
-        item_name: {
+        itemName: {
           label: 'Item'
         },
         grade: {
           label: 'Grade'
         },
-        issued_date: {
+        issuedDate: {
           label: 'Issued Date'
         },
-        purchased_price: {
+        purchasedPrice: {
           label: 'Purchased Price'
         },
-        purchased_date: {
+        purchasedDate: {
           label: 'Purchased Date'
         }
       }
     }
   },
   props: {
-    species: String,
-    pets: Array
+    category: String,
+    items: Array
   }
 }
 </script>

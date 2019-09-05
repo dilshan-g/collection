@@ -1,10 +1,15 @@
 export default {
-  animalsCount: (state) => {
-    return state.cats.length + state.dogs.length
+  itemCount: (state) => {
+    return state.banknotes.length + state.coins.length
   },
-  getAllCats: (state) => {
-    return state.pets.filter((pet) => {
-      return pet.species === 'cat'
+  getAllBanknotes: (state) => {
+    return state.items.filter((item) => {
+      return item.type === 'banknotes'
+    })
+  },
+  getAllCoins: (state) => {
+    return state.items.filter((item) => {
+      return item.type === 'coins'
     })
   }
 }
