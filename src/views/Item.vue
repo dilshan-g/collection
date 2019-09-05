@@ -17,8 +17,8 @@ export default {
   },
   computed: {
     ...mapState([
-      'cats',
-      'dogs'
+      'banknotes',
+      'coins'
     ])
   },
   mounted() {
