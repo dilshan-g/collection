@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Banknotes from './views/Banknotes.vue'
-import Coins from './views/Coins.vue'
+import Items from './views/Items.vue'
 import Item from './views/Item.vue'
+import AddItems from './views/Add.vue'
 
 Vue.use(Router)
 
@@ -17,19 +17,20 @@ export default new Router({
       component: Home
     },
     {
-      path: '/banknotes',
-      name: 'banknotes',
-      component: Banknotes
+      path: '/items',
+      name: 'items',
+      component: Items
     },
     {
-      path: '/coins',
-      name: 'coins',
-      component: Coins
+      path: '/add',
+      name: 'AddItems',
+      component: AddItems
     },
     {
-      path: '/items/:type/:id',
+      path: '/items/:id',
       name: 'item',
-      component: Item
+      component: Item,
+      props: true
     }
   ]
 })

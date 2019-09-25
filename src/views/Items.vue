@@ -1,9 +1,6 @@
 <template>
   <div>
-    <ItemTable
-      category="banknotes"
-      :items="banknotes"
-    />
+    <ItemTable/>
   </div>
 </template>
 
@@ -20,7 +17,7 @@ export default {
   },
   computed: {
     ...mapState([
-      'banknotes'
+      'loadedItems'
     ])
   }
 }

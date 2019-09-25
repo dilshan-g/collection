@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h1>{{ category }}s in your collection</h1>
     <b-table striped hover :items="items" :fields="fields">
       <template slot="itemName" slot-scope="data">
-        <router-link :to="`/items/${category}/${data.index}`">
+        <router-link :to="`/items/${data.item.id}`">
           {{ data.item.itemName }}
         </router-link>
       </template>
@@ -34,9 +33,10 @@ export default {
       }
     }
   },
-  props: {
-    category: String,
-    items: Array
+  computed: {
+    items () {
+      return this.$store.getters.loadedItems
+    }
   }
 }
 </script>

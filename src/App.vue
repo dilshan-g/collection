@@ -1,10 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/banknotes">Banknotes </router-link> |
-      <router-link to="/coins">Coins</router-link> |
-    </div>
+    <b-navbar toggleable="lg" type="dark" variant="danger">
+      <b-navbar-brand to="/">Numismatica 1.0<sup> Beta</sup></b-navbar-brand>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+      <b-collapse id="nav-collapse" is-nav>
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+          <b-navbar-nav>
+            <b-nav-item to="/items">List items</b-nav-item>
+          </b-navbar-nav>
+          <b-navbar-nav>
+            <b-nav-item to="/add">Add items</b-nav-item>
+          </b-navbar-nav>
+          <b-nav-item-dropdown right>
+            <!-- Using 'button-content' slot -->
+            <template v-slot:button-content>
+              <em>Profile</em>
+            </template>
+            <b-dropdown-item href="#">Settings</b-dropdown-item>
+            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+          </b-nav-item-dropdown>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
     <b-container>
       <router-view/>
     </b-container>

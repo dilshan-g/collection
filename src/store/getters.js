@@ -1,15 +1,12 @@
 export default {
-  itemCount: (state) => {
-    return state.banknotes.length + state.coins.length
+  loadedItems (state) {
+    return state.loadedItems
   },
-  getAllBanknotes: (state) => {
-    return state.items.filter((item) => {
-      return item.type === 'banknotes'
-    })
-  },
-  getAllCoins: (state) => {
-    return state.items.filter((item) => {
-      return item.type === 'coins'
-    })
+  loadedItem (state) {
+    return (itemId) => {
+      return state.loadedItems.find((item) => {
+        return item.id === itemId
+      })
+    }
   }
 }

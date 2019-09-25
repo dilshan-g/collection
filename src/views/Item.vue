@@ -1,28 +1,19 @@
 <template>
   <div>
-    <h1>{{ item.itemName }} ({{ $route.params.type }})</h1>
-    <p>Issued Country: {{ item.issuedCountry }}</p>
+    <h1>{{ item.itemName }}</h1>
+    <p>Item Condition: {{ item.grade }}</p>
+    <app-edit-item-details-modal :item="item"></app-edit-item-details-modal>
+    <app-delete-item :item="item"></app-delete-item>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
-  data() {
-    return {
-      item: {}
-    }
-  },
+  props: ['id'],
   computed: {
-    ...mapState([
-      'banknotes',
-      'coins'
-    ])
-  },
-  mounted() {
-    const item = this[this.$route.params.type][this.$route.params.id]
-    this.item = item
+    item () {
+      return this.$store.getters.loadedItem(this.id)
+    }
   }
 }
 </script>
