@@ -1,8 +1,9 @@
 <template>
     <div>
-        <b-button v-b-modal.modal-2 class="btn btn-danger">Delete</b-button>
-
-        <b-modal id="modal-2" title="Delete items" hide-footer="true" v-model="deleteModal">
+        <button class="button is-small is-light" @click.prevent="showDeleteModal" ref="btnShow">
+            <img src="../../assets/svg/trashcan.svg"/>
+        </button>
+        <b-modal :id="id + '-delete'" title="Delete items" hide-footer v-model="deleteModal">
             <p class="my-4">Are you sure that you want to delete {{ deleteItemName }} ?</p>
 
             <div class="modal-footer">
@@ -28,8 +29,12 @@ export default {
       this.$store.dispatch('deleteItem', {
         id: this.item.id
       })
+      this.$bvModal.hide(this.item.id + '-delete')
       this.$store.dispatch('loadItems')
       this.$router.push('/items')
+    },
+    showDeleteModal() {
+      this.$root.$emit('bv::show::modal', this.item.id + '-delete', '#btnShow')
     }
   }
 }

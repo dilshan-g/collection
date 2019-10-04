@@ -8,10 +8,10 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-navbar-nav>
-            <b-nav-item to="/items">List items</b-nav-item>
+            <b-nav-item to="/items" active-class="active" exact>List items</b-nav-item>
           </b-navbar-nav>
           <b-navbar-nav>
-            <b-nav-item to="/add">Add items</b-nav-item>
+            <b-nav-item to="/add" active-class="active" exact>Add items</b-nav-item>
           </b-navbar-nav>
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->

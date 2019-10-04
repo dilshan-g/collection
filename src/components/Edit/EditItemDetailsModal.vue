@@ -1,7 +1,9 @@
 <template>
   <div>
-    <b-button v-b-modal.modal-1>Edit</b-button>
-    <b-modal id="modal-1" title="Edit items" hide-footer="true" v-model="editModal">
+    <button class="button is-small is-light" @click.prevent="showEditModal" ref="btnEdit">
+      <img src="../../assets/svg/pencil.svg"/>
+    </button>
+    <b-modal :id="editId + '-edit'" title="Edit items" hide-footer v-model="editModal" size="lg">
         <b-form>
           <b-form-group id="input-group-1">
             <b-row>
@@ -123,6 +125,7 @@ export default {
   data () {
     return {
       editModal: false,
+      editId: this.item.id,
       editedItemName: this.item.itemName,
       editedIssuedCountry: this.item.issuedCountry,
       editedType: this.item.type,
@@ -157,6 +160,15 @@ export default {
         purchasedDate: this.editedPurchasedDate,
         purchasedPrice: this.editedPurchasedPrice
       })
+      this.$bvToast.toast(this.editedItemName + ' - ' + this.editedIssuedCountry, {
+        title: 'An item edited in your collection',
+        autoHideDelay: 5000,
+        variant: 'success',
+        toaster: 'b-toaster-bottom-right'
+      })
+    },
+    showEditModal() {
+      this.$root.$emit('bv::show::modal', this.editId + '-edit', '#btnEdit')
     }
   },
   computed: {

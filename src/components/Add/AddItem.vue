@@ -155,9 +155,6 @@ export default {
     ...mapActions([
       'createItem'
     ]),
-    /*    toggleItemForm() {
-      this.showItemForm = !this.showItemForm
-    }, */
     handleSubmit() {
       const {
         type,
@@ -190,7 +187,12 @@ export default {
         }
       }
       this.$store.dispatch('createItem', payload)
-      this.$router.push('/items')
+      this.$bvToast.toast(payload.item.itemName + ' - ' + payload.item.issuedCountry, {
+        title: 'Item saved into your collection',
+        autoHideDelay: 5000,
+        variant: 'success',
+        toaster: 'b-toaster-bottom-right'
+      })
 
       // reset form after submit
       this.formData = {

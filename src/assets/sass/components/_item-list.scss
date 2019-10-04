@@ -1,0 +1,11 @@
+.item-list {
+  margin-top: 5%;
+
+  .action-wrapper {
+    display: flex;
+
+    > div {
+      flex: 1 1 auto;
+    }
+  }
+}
