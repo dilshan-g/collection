@@ -42,5 +42,8 @@ export default {
   },
   deleteItem (state, payload) {
     state.loadedItems.push(payload)
+  },
+  setLoading (state, payload) {
+    state.loading = payload
   }
 }

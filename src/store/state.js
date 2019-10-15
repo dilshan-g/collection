@@ -1,3 +1,4 @@
 export default {
-  loadedItems: null
+  loadedItems: null,
+  loading: false
 }

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <b-navbar toggleable="lg" type="dark" variant="danger">
+      <b-link to="/"><b-img src="logo.png" v-bind="mainProps"></b-img></b-link>
       <b-navbar-brand to="/">Numismatica 1.0<sup> Beta</sup></b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -49,3 +50,13 @@
   }
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      mainProps: { width: 50, height: 50 }
+    }
+  }
+}
+</script>

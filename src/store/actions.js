@@ -2,6 +2,7 @@ import * as firebase from 'firebase'
 
 export default {
   loadItems ({ commit }) {
+    commit('setLoading', true)
     firebase.database().ref('items').once('value')
       .then((data) => {
         const items = []
@@ -22,6 +23,7 @@ export default {
           })
         }
         commit('setLoadedItems', items)
+        commit('setLoading', false)
       })
       .catch(
         (error) => {

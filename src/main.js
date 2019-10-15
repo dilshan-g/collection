@@ -29,11 +29,11 @@ new Vue({
   render: h => h(App),
   created () {
     firebase.initializeApp({
-      apiKey: 'AIzaSyAQ8RrLrDyFAG_VafCG5rQ633kUzFVUsus',
-      authDomain: 'collection-1dd44.firebaseapp.com',
-      databaseURL: 'https://collection-1dd44.firebaseio.com',
-      projectId: 'collection-1dd44',
-      storageBucket: 'collection-1dd44.appspot.com'
+      apiKey: '',
+      authDomain: '',
+      databaseURL: '',
+      projectId: '',
+      storageBucket: ''
     })
     this.$store.dispatch('loadItems')
   }

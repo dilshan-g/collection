@@ -8,5 +8,8 @@ export default {
         return item.id === itemId
       })
     }
+  },
+  loading (state) {
+    return state.loading
   }
 }

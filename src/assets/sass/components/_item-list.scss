@@ -8,4 +8,14 @@
       flex: 1 1 auto;
     }
   }
+
+  .search-wrapper {
+    margin-bottom: 24px;
+  }
+
+  .search-alert {
+    &__not-found {
+      margin-top: 18px;
+    }
+  }
 }

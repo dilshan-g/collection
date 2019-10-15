@@ -60,11 +60,13 @@
                                         v-model="formData.grade"
                                         :options="grades"
                                 ></b-form-select>
-                                <label for="issued_country">Issued country:</label>
+                                <label for="issuedCountry">Issued country:</label>
                                 <country-select
+                                        id="issuedCountry"
                                         v-model="formData.issuedCountry"
                                         topCountry="LK"
-                                        class="custom-select"/>
+                                        class="custom-select"
+                                />
                             </b-form-row>
                         </b-col>
                     </b-row>
@@ -125,9 +127,9 @@ export default {
     return {
       formData: {
         itemName: '',
-        issuedCountry: 0,
+        issuedCountry: null,
         type: null,
-        grade: '',
+        grade: null,
         issuedBank: '',
         issuedDate: '',
         itemSerial: '',
@@ -189,16 +191,25 @@ export default {
       this.$store.dispatch('createItem', payload)
       this.$bvToast.toast(payload.item.itemName + ' - ' + payload.item.issuedCountry, {
         title: 'Item saved into your collection',
-        autoHideDelay: 5000,
+        autoHideDelay: 2000,
         variant: 'success',
         toaster: 'b-toaster-bottom-right'
       })
+      this.$router.push('/items')
 
       // reset form after submit
       this.formData = {
         itemName: '',
-        issuedCountry: 0,
-        type: null
+        issuedCountry: null,
+        type: null,
+        grade: null,
+        issuedBank: '',
+        issuedDate: '',
+        itemSerial: '',
+        series: '',
+        purchasedDate: '',
+        purchasedPrice: '',
+        itemImage: null
       }
     },
     onReset (evt) {
