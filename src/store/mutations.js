@@ -45,5 +45,13 @@ export default {
   },
   setLoading (state, payload) {
     state.loading = payload
+  },
+  saveSettings (state, payload) {
+    state.LoadedSettings.push(payload)
+  },
+  setLoadedSettings (state, payload) {
+    state.settingsLocation = payload[0].settingsLocation
+    state.settingsCurrency = payload[0].settingsCurrency
+    state.settingsInterestRate = payload[0].settingsInterestRate
   }
 }

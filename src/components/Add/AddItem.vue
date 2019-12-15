@@ -66,7 +66,7 @@
                                         v-model="formData.issuedCountry"
                                         topCountry="LK"
                                         class="custom-select"
-                                />
+                                ></country-select>
                             </b-form-row>
                         </b-col>
                     </b-row>

@@ -104,5 +104,37 @@ export default {
       .catch(error => {
         console.log(error)
       })
+  },
+  saveSettings ({ commit, getters }, payload) {
+    const settings = {
+      settingsLocation: payload.settingsLocation,
+      settingsCurrency: payload.settingsCurrency,
+      settingsInterestRate: payload.settingsInterestRate
+    }
+    firebase.database().ref('settings').set(settings)
+      .then((data) => {
+        commit('saveSettings')
+        commit('setLoadedSettings')
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  },
+  loadSettings ({ commit }) {
+    firebase.database().ref('settings').once('value')
+      .then((data) => {
+        const items = []
+        items.push({
+          settingsLocation: data.val().settingsLocation,
+          settingsCurrency: data.val().settingsCurrency,
+          settingsInterestRate: data.val().settingsInterestRate
+        })
+        commit('setLoadedSettings', items)
+      })
+      .catch(
+        (error) => {
+          console.log(error)
+        }
+      )
   }
 }

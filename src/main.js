@@ -4,7 +4,7 @@ import vueCountryRegionSelect from 'vue-country-region-select'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import './assets/sass/index.sass'
+import './assets/scss/index.scss'
 
 import App from './App.vue'
 import * as firebase from 'firebase'
@@ -13,6 +13,8 @@ import store from './store'
 import AddItem from './components/Add/AddItem.vue'
 import EditItemDetailsModal from './components/Edit/EditItemDetailsModal.vue'
 import DeleteItem from './components/Delete/DeleteItem.vue'
+import PieChart from './components/Charts/PieChart.vue'
+import Settings from './components/Settings/Settings'
 
 Vue.use(BootstrapVue)
 Vue.use(vueCountryRegionSelect)
@@ -22,6 +24,8 @@ Vue.config.productionTip = false
 Vue.component('app-add-item', AddItem)
 Vue.component('app-edit-item-details-modal', EditItemDetailsModal)
 Vue.component('app-delete-item', DeleteItem)
+Vue.component('pie-chart', PieChart)
+Vue.component('personal-settings', Settings)
 
 new Vue({
   router,
@@ -36,5 +40,6 @@ new Vue({
       storageBucket: ''
     })
     this.$store.dispatch('loadItems')
+    this.$store.dispatch('loadSettings')
   }
 }).$mount('#app')

@@ -1,0 +1,19 @@
+.home-view-container {
+  margin-top: 1.5em;
+  &__main {
+    .items-charts {
+      flex-wrap: wrap;
+
+      @include sm {
+        flex-wrap: nowrap;
+      }
+      div.col-sm-6 {
+        padding: 24px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        border: 1px solid rgba(0,0,0,0.12);
+        margin: 5px;
+      }
+    }
+  }
+}

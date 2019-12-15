@@ -9,17 +9,21 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-navbar-nav>
-            <b-nav-item to="/items" active-class="active" exact>List items</b-nav-item>
+            <b-nav-item to="/items" active-class="active" exact>Items
+              <b-badge variant="light">{{ loadedItems.length }}</b-badge>
+            </b-nav-item>
           </b-navbar-nav>
           <b-navbar-nav>
             <b-nav-item to="/add" active-class="active" exact>Add items</b-nav-item>
+          </b-navbar-nav>
+          <b-navbar-nav>
+            <personal-settings></personal-settings>
           </b-navbar-nav>
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template v-slot:button-content>
               <em>Profile</em>
             </template>
-            <b-dropdown-item href="#">Settings</b-dropdown-item>
             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -52,11 +56,17 @@
 </style>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
       mainProps: { width: 50, height: 50 }
     }
+  },
+  computed: {
+    ...mapGetters([
+      'loadedItems'
+    ])
   }
 }
 </script>

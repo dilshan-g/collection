@@ -1,4 +1,6 @@
 export default {
   loadedItems: null,
-  loading: false
+  loading: false,
+  settingsLocation: null,
+  settingsCurrency: null
 }
